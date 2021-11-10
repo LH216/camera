@@ -91,6 +91,7 @@ def socket_server(a):
                     img = cv2.imread(item)
                     video.write(img)
                 video.release()
+                print("转换mp4完成")
         except:
             pass
 
