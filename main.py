@@ -35,14 +35,15 @@ def socket_server(a):
     num = 0       # 总帧数,此次为测试,可具体参考帧数来设置（我测试的效果大概为每秒6帧,录制20s,所以达到120张照片停止循环）
     print("等待图片数据")
     conn, addr = socket_client.accept()
+    print('-1')
     while True:
         try:
             # 接收的数据大小,建议比图片本身大,不然无法传输
             #fileinfo_size = struct.calcsize('128sl')
-            buf = socket_client.recv(10000)
-            print(0)
+            buf = conn.recv(10000)
+            print('0')
             if buf:
-                print(1)
+                print('1')
                 #filesize = buf
                 # 每次检查时间戳
                 time_b = int(time.time())
@@ -57,7 +58,7 @@ def socket_server(a):
                 #filename, filesize = struct.unpack(file_name, buf)
                 #fn = file_name.strip('\000')
                 new_filename = os.path.join('./{}'.format(a) + file_name)
-                print(3)
+                print('3')
                 fp = open(new_filename, 'wb')
                 print('start receiving...')
                 fp.write(buf)
