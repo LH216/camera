@@ -9,7 +9,7 @@ import sys
 
 mqtt_host = 'PNC6FJ41FE.iotcloud.tencentdevices.com'  #mqtt服务器ip
 mqtt_port = 1883   #mqtt连接端口
-socket_host = '127.0.0.1'  #socket服务器ip
+socket_host = '0.0.0.0'  #socket服务器ip
 socket_port =  10000   #socket连接端口
 #CLIENT_ID = 'PNC6FJ41FElh'  #mqtt存储端ID
 topic = 'PNC6FJ41FE/lh/event'      #主题名
