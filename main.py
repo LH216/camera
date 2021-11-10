@@ -40,7 +40,9 @@ def socket_server(a):
             # 接收的数据大小,建议比图片本身大,不然无法传输
             #fileinfo_size = struct.calcsize('128sl')
             buf = socket_client.recv(10000)
+            print(0)
             if buf:
+                print(1)
                 #filesize = buf
                 # 每次检查时间戳
                 time_b = int(time.time())
@@ -55,6 +57,7 @@ def socket_server(a):
                 #filename, filesize = struct.unpack(file_name, buf)
                 #fn = file_name.strip('\000')
                 new_filename = os.path.join('./{}'.format(a) + file_name)
+                print(3)
                 fp = open(new_filename, 'wb')
                 print('start receiving...')
                 fp.write(buf)
