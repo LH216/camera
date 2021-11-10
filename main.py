@@ -98,7 +98,7 @@ def mkdir(path):
     if not isExists:
        os.makedirs(path) #创建文件夹
     if isExists:
-       os.remove(path)
+       os.makedirs(path)
        os.makedirs(path)
 
 
