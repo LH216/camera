@@ -38,7 +38,7 @@ def socket_server(a):
     conn, addr = socket_client.accept()
     #print('-1')
     #b = '%d' %a
-    print(b)
+    #print(b)
     while True:
         #try:
             # 接收的数据大小,建议比图片本身大,不然无法传输
