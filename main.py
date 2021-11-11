@@ -37,7 +37,7 @@ def socket_server(a):
     conn, addr = socket_client.accept()
     print('-1')
     while True:
-        try:
+        #try:
             # 接收的数据大小,建议比图片本身大,不然无法传输
             #fileinfo_size = struct.calcsize('128sl')
             buf = conn.recv(10000)
@@ -90,8 +90,8 @@ def socket_server(a):
                 videoWriter.release()
                 print("转换mp4完成")
                 break
-        except:
-            pass
+        #except:
+         #   pass
 
 
 def mkdir(path):
