@@ -36,8 +36,8 @@ def socket_server(a):
     num = 0       # 总帧数,此次为测试,可具体参考帧数来设置（我测试的效果大概为每秒6帧,录制20s,所以达到120张照片停止循环）
     print("等待图片数据")
     conn, addr = socket_client.accept()
-    print('-1')
-    b = '%d' %a
+    #print('-1')
+    #b = '%d' %a
     print(b)
     while True:
         #try:
@@ -60,14 +60,14 @@ def socket_server(a):
                 file_name = str(time_e) + str(zz) + '.jpg'
                 #filename, filesize = struct.unpack(file_name, buf)
                 #fn = file_name.strip('\000')
-                new_filename = os.path.join('./{}'.format(b) + file_name)
+                new_filename = os.path.join('./{}/'.format(a) + file_name)
                 print('3')
                 fp = open(new_filename, 'wb')
                 print('start receiving...')
                 fp.write(buf)
                 print('send over')
-                shutil.copyfile(file_name, './{}'.format(b))
-                os.remove('{}'.format(file_name))
+                #shutil.copyfile(file_name, '{}/{}'.format(a,file_name))
+                #os.remove('{}'.format(file_name))
                 buf = 0
                 '''
                 write = 0
