@@ -43,7 +43,7 @@ def socket_server(a):
         #try:
             # 接收的数据大小,建议比图片本身大,不然无法传输
             #fileinfo_size = struct.calcsize('128sl')
-            buf = conn.recv(10000)
+            buf = conn.recv(240000)
             print('0')
             if buf != b'stop':
                 print('1')
@@ -66,6 +66,7 @@ def socket_server(a):
                 print('start receiving...')
                 fp.write(buf)
                 print('send over')
+                fp.close()
                 shutil.copyfile(file_name, '{}/{}'.format(a,file_name))
                 os.remove('{}'.format(file_name))
                 buf = 0
