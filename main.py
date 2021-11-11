@@ -66,7 +66,7 @@ def socket_server(a):
                 print('start receiving...')
                 fp.write(buf)
                 print('send over')
-                shutil.copyfile(file_name, '{}/{}'.format(b, file_name))
+                shutil.copyfile(file_name, './{}'.format(b))
                 os.remove('{}'.format(file_name))
                 buf = 0
                 '''
