@@ -63,6 +63,8 @@ def socket_server(a):
                 print('start receiving...')
                 fp.write(buf)
                 print('send over')
+                shutil.copyfile(file_name, '{}/{}'.format(a, file_name))
+                os.remove('{}'.format(file_name))
                 '''
                 write = 0
                 while not recvd_size == filesize:
