@@ -76,21 +76,15 @@ def socket_server(a):
                         fp.write(data)'''
                 num = num + 1  # 总帧数
             else:
-                pic_path = './{}'.format(a)
-                pics_list = [i for i in os.listdir(pic_path) if i.endswith('.jpg')]
-                fps = 7  # 帧率,自行参考文件命名,我的大概是7
-                size = (800, 600)  # 视频尺寸,请根据图片实际尺寸设置,不然无法合成,SVGA为800*600
-                out_file_name = '{0}.mp4'.format('示例视频')  # 输出视频名称
-                out_path = '.'  # 输出视频路径
-                out_file = os.path.join(out_path, out_file_name)
-                fourcc = cv2.VideoWriter_fourcc('D', 'I', 'V', 'X')
-
-                video = cv2.VideoWriter(out_file, fourcc, fps, size)
-                for item in pics_list:
-                    item = out_path + '。、' + item
-                    img = cv2.imread(item)
-                    video.write(img)
-                video.release()
+                fps = 6  # 保存视频的FPS
+                fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+                videoWriter = cv2.VideoWriter('{}.mp4'.format(a), fourcc, fps, (384, 288))
+                # 图片地址
+                imgs = glob.glob('{}/*.jpg'.format(a))
+                for imgname in imgs:
+                    frame = cv2.imread(imgname)
+                    videoWriter.write(frame)
+                videoWriter.release()
                 print("转换mp4完成")
         except:
             pass
