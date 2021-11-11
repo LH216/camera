@@ -5,6 +5,7 @@ import os
 import cv2
 import struct
 import sys
+import shutil
 
 
 mqtt_host = 'PNC6FJ41FE.iotcloud.tencentdevices.com'  #mqtt服务器ip
