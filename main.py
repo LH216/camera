@@ -42,7 +42,7 @@ def socket_server(a):
             #fileinfo_size = struct.calcsize('128sl')
             buf = conn.recv(10000)
             print('0')
-            if buf:
+            if buf and buf != "stop":
                 print('1')
                 #filesize = buf
                 # 每次检查时间戳
@@ -77,7 +77,7 @@ def socket_server(a):
                         recvd_size = filesize
                         fp.write(data)'''
                 num = num + 1  # 总帧数
-            else if buf is "stop":
+            else if buf == "stop":
                 fps = 6  # 保存视频的FPS
                 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
                 videoWriter = cv2.VideoWriter('{}.mp4'.format(a), fourcc, fps, (384, 288))
