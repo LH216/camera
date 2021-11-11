@@ -86,7 +86,7 @@ def socket_server(a):
                 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
                 videoWriter = cv2.VideoWriter('{}.mp4'.format(a), fourcc, fps, (384, 288))
                 # 图片地址
-                imgs = glob.glob('{}/*.jpg'.format(b))
+                imgs = glob.glob('{}/*.jpg'.format(a))
                 for imgname in imgs:
                     frame = cv2.imread(imgname)
                     videoWriter.write(frame)
