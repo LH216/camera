@@ -88,6 +88,7 @@ def socket_server(a):
                     videoWriter.write(frame)
                 videoWriter.release()
                 print("转换mp4完成")
+                break
         except:
             pass
 
