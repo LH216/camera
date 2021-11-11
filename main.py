@@ -40,7 +40,7 @@ def socket_server(a):
         try:
             # 接收的数据大小,建议比图片本身大,不然无法传输
             #fileinfo_size = struct.calcsize('128sl')
-            buf = conn.recv(10000)
+            buf = conn.recv(100000)
             print('0')
             if buf != b'stop':
                 print('1')
