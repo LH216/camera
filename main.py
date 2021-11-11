@@ -6,7 +6,7 @@ import cv2
 import struct
 import sys
 import shutil
-
+import glob
 
 mqtt_host = 'PNC6FJ41FE.iotcloud.tencentdevices.com'  #mqtt服务器ip
 mqtt_port = 1883   #mqtt连接端口
