@@ -77,7 +77,7 @@ def socket_server(a):
                         recvd_size = filesize
                         fp.write(data)'''
                 num = num + 1  # 总帧数
-            else:
+            else if buf is "stop":
                 fps = 6  # 保存视频的FPS
                 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
                 videoWriter = cv2.VideoWriter('{}.mp4'.format(a), fourcc, fps, (384, 288))
