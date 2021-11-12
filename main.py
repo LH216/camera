@@ -57,7 +57,7 @@ def socket_server(a):
                     time_e = time_b
                     zz = 0
                 # 存储图片
-                file_name = str(time_e) + str(zz) + '.jpg'
+                file_name = str(time_e) +'_'+ str(zz) + '.jpg'
                 #filename, filesize = struct.unpack(file_name, buf)
                 #fn = file_name.strip('\000')
                 new_filename = os.path.join('{}'.format(a),'{}'.format(file_name))
