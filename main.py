@@ -30,7 +30,7 @@ def socket_server(a):
     mkdir(mkpath)
     socket_client = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)  #socket TCP创建对象
     socket_client.bind((socket_host,socket_port))  #绑定socket通信端口
-    socket_client.listen(50)         #最大监听量
+    #socket_client.listen(50)         #最大监听量
     time_e = int(time.time())        # 这里时间戳用来命名图片文件
     zz = 0                            # 当前时间戳的第N帧
     num = 0       # 总帧数,此次为测试,可具体参考帧数来设置（我测试的效果大概为每秒6帧,录制20s,所以达到120张照片停止循环）
