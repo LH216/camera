@@ -28,7 +28,7 @@ def socket_server(a):
     a = a + 1
     mkpath = "./{}".format(a)
     mkdir(mkpath)
-    socket_client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)  #socket TCP创建对象
+    socket_client = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)  #socket TCP创建对象
     socket_client.bind((socket_host,socket_port))  #绑定socket通信端口
     socket_client.listen(50)         #最大监听量
     time_e = int(time.time())        # 这里时间戳用来命名图片文件
@@ -43,7 +43,7 @@ def socket_server(a):
         try:
             # 接收的数据大小,建议比图片本身大,不然无法传输
             #fileinfo_size = struct.calcsize('128sl')
-            buf = conn.recv(240000)
+            buf = conn.recv(200000)
             print('0')
             if buf != b'stop':
                 print('1')
