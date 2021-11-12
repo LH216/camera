@@ -60,7 +60,7 @@ def socket_server(a):
                 file_name = str(time_e) + str(zz) + '.jpg'
                 #filename, filesize = struct.unpack(file_name, buf)
                 #fn = file_name.strip('\000')
-                new_filename = os.path.join('./{}'.format(a) + file_name)
+                new_filename = os.path.join('{}'.format(a),'{}'.format(file_name))
                 print('3')
                 fp = open(new_filename, 'wb')
                 print('start receiving...')
